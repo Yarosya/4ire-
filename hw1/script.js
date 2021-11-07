@@ -7,7 +7,9 @@ let flag = true,
     fValue,
     sValue,
     resultValue;
-    
+
+
+
 while(flag){
     let firstCurrency = prompt('Please, enter the currency to convert from: "UAH", "USD", "EUR", "BTC","PLN"', 'UAH').toUpperCase();
 
@@ -22,8 +24,8 @@ while(flag){
         }else{
             sValue = secondCurrency === "UAH" ? UAH : secondCurrency === "USD" ? USD : secondCurrency === "EUR" ? EUR : secondCurrency === "BTC" ? BTC : PLN;
 
-            resultValue = ((quantity/sValue)*fValue);
-            alert(`${firstCurrency} to ${secondCurrency} : ${resultValue.toFixed(3) }`)
+            resultValue = ((quantity/sValue)*fValue).toFixed(3);
+            alert(`${firstCurrency} to ${secondCurrency} : ${resultValue }`)
             flag = confirm(`You want to continue?`);
         }
 
