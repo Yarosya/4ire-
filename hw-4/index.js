@@ -85,7 +85,8 @@ let pL = powerLines()
 
 const [energyDay,energyNight] = [consumptionSunlightday(),consumptionNight()]
 const getBalanceValue = (energy, arrLines) => {
-    let money = 0;
+    let money = 0,
+    info;
     if (energy < 0) {
         arrLines.sort((prev, curr) => {
              return prev.price - curr.price
@@ -95,39 +96,32 @@ const getBalanceValue = (energy, arrLines) => {
             prev.price - curr.price
         });
     } 
-    energy = Math.abs(energy);
+    let energyAbs = Math.abs(energy);
     for (let i = 0; i < arrLines.length; i++) {
-        if (energy > arrLines[i].power) {
-            money += arrLines[i].power * arrLines[i].price;
-            energy -= arrLines[i].power;  
+        if (energyAbs > arrLines[i].power * lengthDay) {
+          money += arrLines[i].power * lengthDay * arrLines[i].price;
+          energyAbs -= arrLines[i].power * lengthDay;
+        } else {
+          money += energyAbs * arrLines[i].price;
         }
-        if (energy < arrLines[i].power) {
-            money += energy * arrLines[i].price;
-            return money;
-        }
+      }
+      if(energy > 0){
+        info = `Енергія : ${energy} kWt - профіт $`;
+    }else{
+        info = `Енергія : ${energy} kWt затрати $ `;
     }
-    return energy;
+    return  `${info}${money}`;
 }
 
 const day = getBalanceValue(energyDay, pL);
 const night = getBalanceValue(energyNight, pL);
 
-if(energyDay > 0){
-    console.log(`Енергія за день: ${energyDay} kWt - профіт ${day} $`)
-}else{
-    console.log(`
-Енергія за день: ${energyDay} kWt
-затрати ${day}$
-    `);
-}
-if(energyNight > 0){
-    console.log(`Енергія за ніч: ${energyNight} kWt - профіт ${night} $`)
-}else{
-    console.log(`
-Енергія за день: ${energyNight} kWt
-затрати ${night}$
-    `);
-}
+console.group(`Затрати/прибуток за день`);
+console.log(day);
+console.groupEnd()
+console.group(`Затрати/прибуток за ніч`);
+console.log(night);
+console.groupEnd()
 
 
 
