@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./scss/style.scss">
+    <link rel="shortcut icon" sizes="32x32" href="./img/favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar__wrapper">
+                <div class="sidebar__user">
+                    <img class="sidebar__user-logo" src="./img/user.png" alt="">
+                    <h4 class="sidebar__user-profile">Profile</h4>
+                </div>
+                <div class="sidebar__navigation">
+                    <div class="sidebar__navigation-content">
+                        <ul class="sidebar__list">
+                            <li class="sidebar__list-item journal active-item">
+                                <img class="sidebar__list-img" src="./img/journal.png" alt="">
+                                <a class="sidebar__list-link" href="#">Journal</a>
+                            </li>
+                            <li class="sidebar__list-item journal active-item">
+                                <img class="sidebar__list-img" src="./img/task.png" alt="">
+                                <a class="sidebar__list-link" href="#">Tasks</a>
+                            </li>
+                            <li class="sidebar__list-item journal active-item">
+                                <img class="sidebar__list-img" src="./img/group.png" alt="">
+                                <a class="sidebar__list-link" href="#">Group</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <main class="main">
+            <section class="modal-group modal">
+                <div class="modal-group__content modal__content">
+                    <form action="" class="modal-group__form">
+                        <h2>Create new Group</h2>
+                        <label for="color">Choose color</label>
+                        <input class="modal-group__form-color" type="color" name="color" id="color">
+                        <label for="task-name">Group name</label>
+                        <input class="modal-group__text task-name" type="text" name="" id="group-name"
+                            placeholder="House">
+                        <div class="btn">
+                            <input class=" btn__create create-group" type="button" value="Create">
+                            <input class="group-btn btn__cancel" type="button" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="modal-task modal">
+                <div class="modal-task__content modal__content">
+                    <form action="" class="modal-task__form">
+                        <h2>Create new Task</h2>
+                        <input class="task-name modal-task__value" type="text" name="task" placeholder="Do" id="">
+                        <label for="select-group">Choose group</label>
+                        <select name="" class="modal-task__select" id="select-group">
+
+                        </select>
+                        <input type="date" name="" class="deadline" id="deadline" required="required">
+                        <div class="btn">
+                            <input class="btn__create create__task" type="button" value="Create ">
+                            <input class="task-btn btn__cancel" type="button" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="constructor">
+                <div class="container">
+                    <button class="constructor__group add">Add Group Tasks <i class="fas fa-plus-circle"></i></button>
+                    <button class="constructor__task add">Add Tasks <i class="fas fa-plus-circle"></i></button>
+                </div>
+            </section>
+            <section class="group">
+                <div class="container">
+                    <div class="group__item">
+
+
+                    </div>
+                </div>
+    </div>
+    </section>
+    </main>
+    </div>
+    <script type="module" src="./index.js" defer></script>
+</body>
+
+</html>

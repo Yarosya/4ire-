@@ -1,0 +1,138 @@
+@import 'global';
+@import 'var';
+@import 'modal';
+@import "../node_modules/normalize.css/normalize.css";
+.wrapper{
+    display: flex;
+}
+.sidebar{
+    min-width: 100px;
+    width: 10%;
+    height: 100vh;
+    position: sticky;
+    left: 0;
+    top: 0;
+    margin-right: 10px;
+    background: #F3F3F3;
+    &__wrapper{
+        margin-top: 20px;
+        text-align: center;
+    }
+    &__user{
+        padding-bottom: 20px;
+        &-logo{
+            width: 70px;
+            height: 70px;
+        }
+        &-profile{
+            font-size: 20px;
+        }
+    }
+    &__list{
+        &-item{
+            padding-bottom: 20px;
+        }
+        &-link{
+                display: block;
+        }
+        &-img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+ 
+}
+.main{
+    width: 90%;
+}
+.constructor{
+    margin:20px 0 30px 0;
+    width: 90%;
+    padding-bottom: 30px;
+    border-bottom: 3px dashed #edc7b7;
+    .add{
+        background: #D4F8CB66;
+        box-shadow: -5px -5px 5px -5px rgba(0, 0, 0, 0.6) inset;
+        font-size: 20px;
+        cursor: pointer;
+        height: 50px;
+        width: 250px;
+        text-align: center;
+        border-radius: 10px;
+        border: none;
+        margin-right: 20px;
+    }
+}
+.group{
+    width: 80%;
+    &__items{
+        max-width: 65%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        position: relative;
+    }
+    &__delete{
+        position: absolute;
+        color: #ffffff;
+        top: 22px;
+        right: 10px;
+        border: none;
+        background: none;
+        font-size: 38px;
+        transition: all .3s;
+        text-shadow: 2px 2px 0 #000000;
+        &:hover{
+            color: rgb(230, 7, 7);
+            transition: all .3s;
+            cursor: pointer;
+        }
+    }
+
+    &__legend{
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 15px;
+        legend{
+            color: #000000;
+            font-weight: bold;
+            background: #eefcea;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: -5px -5px 5px -5px rgb(0 0 0 / 60%) inset;
+            font-family: 'Mochiy Pop P One', sans-serif;
+            font-size: 12px;
+        }
+    }
+    &__title{
+        font-size: 20px;
+        color: #ffffff;
+        text-shadow: 2px 2px 0 #bcbcbc;
+        
+        
+    }
+    &__task{
+        padding: 20px 0 20px 0;
+        border-bottom: 1px solid #000;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        justify-content: space-around;
+        &-name{
+            width: 400px;
+        }
+        &-status{
+           .legend{
+            color: #0e0d0d;
+            border-radius: 15px;
+           }
+        }
+        &-select{
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 16px;
+        }
+    }
+}
+
+
